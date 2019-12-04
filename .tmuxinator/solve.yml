@@ -1,0 +1,12 @@
+# ~/.tmuxinator/solve.yml
+
+name: solve
+root: ~/norada/solve-kaizen/Solve/SolveJS
+
+windows:
+  - server:
+      layout: main-vertical
+      panes:
+        - git status
+        - npm start
+  - editor: nvim

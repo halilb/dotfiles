@@ -1,0 +1,12 @@
+# ~/.tmuxinator/tribun.yml
+
+name: tribun
+root: ~/zenkronn/sosyalarena-client
+
+windows:
+  - server:
+      layout: main-vertical
+      panes:
+        - nvm use 4.2.1 && git status
+        - nvm use 4.2.1 && gulp --env=stub
+  - editor: nvm use 4.2.1 && nvim

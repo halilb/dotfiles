@@ -1,0 +1,12 @@
+# ~/.tmuxinator/web.yml
+
+name: web
+root: ~/unifyre/web
+
+windows:
+  - server:
+      layout: main-vertical
+      panes:
+        - git status
+        - npm run dev
+  - editor: nvim

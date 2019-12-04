@@ -1,0 +1,31 @@
+[user]
+	name = Halil Bilir
+	email = hbilir@gmail.com
+
+[alias]
+	st = status
+        s = status
+	rm = remove
+	df = diff --color
+	dfc = diff --cached
+	co = checkout
+	cm = commit -m
+	br = branch
+	lga = log --branches --remotes --tags --graph --oneline --decorate
+	edit = "!vim `git ls-files -m` -p"
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+[push]
+	default = current
+[core]
+	editor = nvim
+	excludesfile = /Users/halil/.gitignore_global
+[format]
+        pretty = format:%C(auto)%h%C(auto)% G? %C(auto)%>(12,trunc)%ad %C(auto,green)%<(7,trunc)%aN%C(auto,reset)%s%C(auto,red)% gD% D
+[log]
+        date = relative
+[gpg]
+	program = /usr/local/bin/gpg2

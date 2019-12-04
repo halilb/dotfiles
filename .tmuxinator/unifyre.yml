@@ -1,0 +1,12 @@
+# ~/.tmuxinator/unifyre.yml
+
+name: unifyre
+root: ~/unifyre/client
+
+windows:
+  - server:
+      layout: main-vertical
+      panes:
+        - git status
+        - npm start
+  - editor: nvim

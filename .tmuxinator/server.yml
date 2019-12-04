@@ -1,0 +1,11 @@
+# ~/.tmuxinator/server.yml
+
+name: server
+root: ~/unifyre/server
+
+windows:
+  - main:
+      layout: main-vertical
+      panes:
+        - git status
+        - nvim

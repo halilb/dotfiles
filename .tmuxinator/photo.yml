@@ -1,0 +1,13 @@
+# ~/.tmuxinator/photo.yml
+
+name: photo
+root: ~/stars/react-native-photo-browser
+
+windows:
+  - server:
+      root: ~/stars/react-native-photo-browser/Example
+      layout: main-vertical
+      panes:
+        - git status
+        - react-native start --port 8081
+  - editor: nvim

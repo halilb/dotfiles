@@ -1,0 +1,12 @@
+# ~/.tmuxinator/ordering.yml
+
+name: ordering
+root: ~/thanx/ordering
+
+windows:
+  - server:
+      layout: main-vertical
+      panes:
+        - git status
+        - npm start
+  - editor: nvim

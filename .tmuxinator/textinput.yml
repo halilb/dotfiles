@@ -1,0 +1,13 @@
+# ~/.tmuxinator/textinput.yml
+
+name: textinput
+root: ~/stars/react-native-textinput-effects
+
+windows:
+  - server:
+      root: ~/stars/react-native-textinput-effects/Example
+      layout: main-vertical
+      panes:
+        - git status
+        - react-native start --port 8081
+  - editor: nvim
