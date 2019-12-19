@@ -38,8 +38,8 @@ export PATH=$PATH:/usr/local/Cellar/mysql@5.7/5.7.27_1/bin
 
 source ~/.bin/tmuxinator.zsh
 
-source ~/Downloads/google-cloud-sdk/completion.zsh.inc
-source ~/Downloads/google-cloud-sdk/path.zsh.inc
+# source ~/Downloads/google-cloud-sdk/completion.zsh.inc
+# source ~/Downloads/google-cloud-sdk/path.zsh.inc
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -100,7 +100,7 @@ function schemeopen () {
   xcrun simctl openurl booted $1
 }
 
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
 # fnm
 eval "$(fnm env --multi)"
 export PATH="/usr/local/bin/watchman:$PATH"

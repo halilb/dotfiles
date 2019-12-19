@@ -4,9 +4,9 @@ name: ordering
 root: ~/thanx/ordering
 
 windows:
-  - server:
-      layout: main-vertical
+  - editor:
+      layout: 3c7b,210x64,0,0{157x64,0,0,3,52x64,158,0[52x16,158,0,0,52x47,158,17,4]}
       panes:
-        - git status
+        - nvim
         - npm start
-  - editor: nvim
+        - git status
