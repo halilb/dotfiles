@@ -1,12 +1,30 @@
-# ~/.tmuxinator/unifyre.yml
+# ~/.tmuxinator/thanx.yml
 
 name: thanx
-root: ~/thanx/app
+root: ~/thanx
 
 windows:
-  - server:
-      layout: main-vertical
+  - mobile:
+      root: ~/thanx/app
+      pre: fnm use
+      layout: ed28,203x84,0,0{45x84,0,0[45x30,0,0,0,45x53,0,31,3],157x84,46,0,4}
       panes:
+        - node --version
         - git status
-        - cd mobile && react-native start
-  - editor: nvim
+        - nvim
+  - merchant:
+      root: ~/thanx/merchant-ui
+      pre: fnm use
+      layout: ed28,203x84,0,0{45x84,0,0[45x30,0,0,0,45x53,0,31,3],157x84,46,0,4}
+      panes:
+        - node --version
+        - git status
+        - nvim
+  - ordering:
+      root: ~/thanx/ordering
+      pre: fnm use 10.16.3
+      layout: ed28,203x84,0,0{45x84,0,0[45x30,0,0,0,45x53,0,31,3],157x84,46,0,4}
+      panes:
+        - node --version
+        - git status
+        - nvim

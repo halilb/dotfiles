@@ -12,7 +12,12 @@
 	cm = commit -m
 	br = branch
 	lga = log --branches --remotes --tags --graph --oneline --decorate
+        lol = log --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%C(bold)%d%Creset %C(cyan)(%cr)%Creset %C(green)%ce%Creset %s'
 	edit = "!vim `git ls-files -m` -p"
+        unstage = reset HEAD --
+        uncommit = reset --soft HEAD~1
+        recommit = commit --amend --no-edit
+        ss = "!f() { git stash show -p stash@{$1}; }; f"
 [color]
 	branch = auto
 	diff = auto
@@ -25,7 +30,5 @@
 	excludesfile = /Users/halil/.gitignore_global
 [format]
         pretty = format:%C(auto)%h%C(auto)% G? %C(auto)%>(12,trunc)%ad %C(auto,green)%<(7,trunc)%aN%C(auto,reset)%s%C(auto,red)% gD% D
-[log]
-        date = relative
 [gpg]
 	program = /usr/local/bin/gpg2

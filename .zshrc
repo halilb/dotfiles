@@ -19,6 +19,13 @@ plugins=(git wd)
 
 source $ZSH/oh-my-zsh.sh
 
+export HISTSIZE=10000000
+export HISTFILESIZE=10000000
+
+# z for navigation
+# https://github.com/rupa/z
+. /Users/halil/dev/z.sh
+
 # User configuration
 #
 export MAGICK_HOME="/usr/local/ImageMagick-7.0.8"
@@ -28,7 +35,9 @@ export DYLD_LIBRARY_PATH="$MAGICK_HOME/lib/"
 export PATH="$HOME/.fastlane/bin:$PATH"
 
 export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 export PATH=$PATH:~/Library/Python/2.7/bin
@@ -100,8 +109,21 @@ function schemeopen () {
   xcrun simctl openurl booted $1
 }
 
-# eval "$(rbenv init -)"
+# https://medium.com/@GroundControl/better-git-diffs-with-fzf-89083739a9cb
+function fd() {
+  preview="git $@ --color=always -- {-1}"
+  git $@ --name-only | fzf -m --ansi --preview $preview
+}
+
+eval "$(rbenv init -)"
+
 # fnm
 eval "$(fnm env --multi)"
 export PATH="/usr/local/bin/watchman:$PATH"
 alias config='/usr/bin/git --git-dir=/Users/halil/.cfg/ --work-tree=/Users/halil'
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/halil/dev/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/halil/dev/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/halil/dev/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/halil/dev/google-cloud-sdk/completion.zsh.inc'; fi

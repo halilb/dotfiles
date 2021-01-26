@@ -16,6 +16,7 @@ Plug 'rizzatti/dash.vim'
 
 " Git
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/gv.vim', { 'on': 'GV' }
 
@@ -39,6 +40,9 @@ Plug 'haya14busa/incsearch.vim'
 " For async completion
 " Plug 'Shougo/deoplete.nvim'
 
+" python
+"Plug 'psf/black'
+
 " Plug 'zxqfl/tabnine-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -58,12 +62,22 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-airline/vim-airline'
 " Plug 'ryanoasis/vim-devicons'
 
+" Snippets
+" used with coc-snippets
+Plug 'honza/vim-snippets'
+
+Plug 'jparise/vim-graphql'
 
 call plug#end()
 
 syntax on
 syntax enable
 
+filetype plugin on
+
+" minimum tab size
+set winwidth=100
+"set winheight=40
 
 "colors torte
 "colors shine
@@ -96,9 +110,9 @@ set updatetime=300      " for gitgutter and coc
 
 
 " prettier for coc
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-vmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+"command! -nargs=0 Prettier :CocCommand prettier.formatFile
+"vmap <leader>f  <Plug>(coc-format-selected)
+"nmap <leader>f  <Plug>(coc-format-selected)
 
 " Use <C-L> to clear the highlighting of :set hlsearch.
 if maparg('<C-L>', 'n') ==# ''
@@ -155,8 +169,8 @@ let g:syntastic_always_populate_loc_list = 1
 autocmd BufNewFile,BufRead *.hbs set syntax=html
 
 " Tell ack.vim to use ag (the Silver Searcher) instead
-let g:ackprg = 'ag --vimgrep'
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+let g:ackprg = 'Rg --vimgrep'
+let $FZF_DEFAULT_COMMAND = 'rg --files'
 
 " start of file finder
 " see https://damien.pobel.fr/post/configure-neovim-vim-gf-javascript-import/
@@ -187,8 +201,8 @@ function! FloatingFZF()
   let buf = nvim_create_buf(v:false, v:true)
   call setbufvar(buf, '&signcolumn', 'no')
 
-  let height = float2nr(10)
-  let width = float2nr(80)
+  let height = float2nr(30)
+  let width = float2nr(160)
   let horizontal = float2nr((&columns - width) / 2)
   let vertical = 1
 
@@ -204,3 +218,7 @@ function! FloatingFZF()
   call nvim_open_win(buf, v:true, opts)
 endfunction
 " end of fzf floating window
+
+" move to next-previous quickfix file
+map <C-j> :cn<CR>
+map <C-k> :cp<CR>

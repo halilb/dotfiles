@@ -1,10 +1,17 @@
 {
   "tslint.run": "onSave",
   "tslint.autoFixOnSave": "on",
-  "tsserver.log": "on",
+  "tsserver.log": "off",
   "tsserver.formatOnType": false,
   "diagnostic.displayByAle": true,
   "diagnostic.checkCurrentLine": true,
-  "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown", "javacript", "typescript", "typescriptreact", "javascriptreact", "json"],
-  "tsserver.npm": "/var/folders/6b/9w6yf3v93s3f2304gxcjqyz80000gn/T/fnm-shell-5783961/bin/npm"
+  "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown", "markdown", "javascript", "typescript", "typescriptreact", "javascriptreact", "json", "python"],
+  "tsserver.npm": "/var/folders/6b/9w6yf3v93s3f2304gxcjqyz80000gn/T/fnm-shell-5783961/bin/npm",
+  "snippets.extends": {
+    "javascriptreact": ["javascript"],
+    "typescript": ["javascript"],
+    "typescriptreact": ["javascript"]
+  },
+  "javascript.validate.enable": false,
+  "tabnine.prioriy": 1
 }

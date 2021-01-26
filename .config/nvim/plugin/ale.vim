@@ -17,11 +17,11 @@ let g:ale_linters = {
 
 
 " 'javascript': ['prettier', 'eslint'],
-let g:ale_fixers = {
-\   'javascript': ['eslint'],
-\   'typescript': [],
-\   'typescriptreact': []
-\   }
+"let g:ale_fixers = {
+"\   'javascript': ['eslint'],
+"\   'typescript': [],
+"\   'typescriptreact': []
+"\   }
 
 nmap <leader>d <Plug>(ale_fix)
 
