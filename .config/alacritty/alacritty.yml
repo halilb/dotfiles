@@ -49,7 +49,7 @@ window:
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background, but no title bar buttons
-  #decorations: none
+  decorations: none
 
   # Startup Mode (changes require restart)
   #
@@ -60,7 +60,7 @@ window:
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
-  #startup_mode: SimpleFulllscreen
+  # startup_mode: Windowed
 
   # Window title
   #title: Alacritty
@@ -521,7 +521,8 @@ key_bindings:
   - { key: Key2,     mods: Alt,     chars: "@"                           }
   - { key: Key4,     mods: Alt,     chars: "$"                           }
 
-  - { key: Backslash,     mods: Alt,     chars: "|"                           }
+  - { key: 27,     mods: Alt,     chars: "\\"                           }
+  - { key: 50,     mods: Alt,     chars: "|"                           }
   #- { key: LBracket,     mods: Alt,     chars: "\x7B"                           }
   #- { key: RBracket,     mods: Alt,     chars: "}"                           }
   - { key: 26,       mods: Alt,     chars: "{"                           }

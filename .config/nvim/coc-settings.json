@@ -13,5 +13,6 @@
     "typescriptreact": ["javascript"]
   },
   "javascript.validate.enable": false,
-  "tabnine.prioriy": 1
+  "tabnine.prioriy": 1,
+  "eslint.alwaysShowStatus": true
 }
