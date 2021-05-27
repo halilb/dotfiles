@@ -15,7 +15,10 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git wd)
+plugins=(
+  git wd
+  transfer
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -93,6 +96,12 @@ bindkey '^Z' fancy-ctrl-z
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# Use ag for fzf to respect ignore files
+# https://github.com/junegunn/fzf/issues/383#issuecomment-266884262
+export FZF_DEFAULT_COMMAND='ag -g ""'
+# To apply the command to CTRL-T as well
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 wd() {
   . /Users/halil/bin/wd/wd.sh
@@ -127,3 +136,6 @@ if [ -f '/Users/halil/dev/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/halil
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/halil/dev/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/halil/dev/google-cloud-sdk/completion.zsh.inc'; fi
+
+
+alias rgf='rg --files | rg'

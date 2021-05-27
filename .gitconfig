@@ -10,7 +10,7 @@
 	dfc = diff --cached
 	co = checkout
 	cm = commit -m
-	br = branch
+	br = branch --sort=-committerdate
 	lga = log --branches --remotes --tags --graph --oneline --decorate
         lol = log --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%C(bold)%d%Creset %C(cyan)(%cr)%Creset %C(green)%ce%Creset %s'
 	edit = "!vim `git ls-files -m` -p"

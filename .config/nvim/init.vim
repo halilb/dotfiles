@@ -5,14 +5,17 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 
+" Substition with respect to case:
+" :%s/facility/building/g
+" https://github.com/tpope/vim-abolish
+Plug 'tpope/vim-abolish'
+
 " Syntax highlighting
 "Plug 'scrooloose/syntastic'
 "Plug 'mxw/vim-jsx'
 "Plug 'jaxbot/syntastic-react'
 "Plug 'pangloss/vim-javascript'
-Plug 'sheerun/vim-polyglot'
-
-Plug 'rizzatti/dash.vim'
+"Plug 'sheerun/vim-polyglot'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -26,8 +29,20 @@ Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree'
 
+" colors
+Plug 'morhetz/gruvbox'
+Plug 'christianchiarulli/nvcode-color-schemes.vim'
+
+" syntax highlighting
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+" telescope and dependencies
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
 " Task running
-Plug 'w0rp/ale'                           " Linter
+" Plug 'w0rp/ale'                           " Linter
 
 " File navigation
 Plug 'easymotion/vim-easymotion'
@@ -46,12 +61,6 @@ Plug 'haya14busa/incsearch.vim'
 " Plug 'zxqfl/tabnine-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" floating terminal
-Plug 'voldikss/vim-floaterm'
-
-" colors
-Plug 'morhetz/gruvbox'
-
 " easier tesing
 Plug 'janko/vim-test'
 
@@ -63,15 +72,13 @@ Plug 'vim-airline/vim-airline'
 " Plug 'ryanoasis/vim-devicons'
 
 " Snippets
-" used with coc-snippets
 Plug 'honza/vim-snippets'
-
-Plug 'jparise/vim-graphql'
 
 call plug#end()
 
+luafile $HOME/.config/nvim/lua/config.lua
+
 syntax on
-syntax enable
 
 filetype plugin on
 
@@ -79,9 +86,16 @@ filetype plugin on
 set winwidth=100
 "set winheight=40
 
+" Theme
 "colors torte
 "colors shine
+"colorscheme gruvbox
+
+if (has("termguicolors"))
+ set termguicolors
+endif
 colorscheme gruvbox
+
 
 " devicons
 " let g:airline_powerline_fonts = 1
@@ -108,6 +122,10 @@ set relativenumber
 
 set updatetime=300      " for gitgutter and coc
 
+" substitute wasn't changing multiple occurrences in a single line
+" https://vi.stackexchange.com/a/7392
+set nogdefault
+
 
 " prettier for coc
 "command! -nargs=0 Prettier :CocCommand prettier.formatFile
@@ -129,9 +147,6 @@ nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
-
-" new terminal
-let g:floaterm_keymap_toggle = '<leader>v'
 
 " open nvim configuration
 " nmap <leader>v :e ~/.config/nvim/init.vim<CR>
