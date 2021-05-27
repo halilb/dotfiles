@@ -10,13 +10,6 @@ Plug 'tpope/vim-surround'
 " https://github.com/tpope/vim-abolish
 Plug 'tpope/vim-abolish'
 
-" Syntax highlighting
-"Plug 'scrooloose/syntastic'
-"Plug 'mxw/vim-jsx'
-"Plug 'jaxbot/syntastic-react'
-"Plug 'pangloss/vim-javascript'
-"Plug 'sheerun/vim-polyglot'
-
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
@@ -41,22 +34,16 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
-" Task running
-" Plug 'w0rp/ale'                           " Linter
+" indentation lines
+Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua' }
+
+" Linter
+Plug 'w0rp/ale'
 
 " File navigation
 Plug 'easymotion/vim-easymotion'
 Plug 'kshenoy/vim-signature'
 Plug 'haya14busa/incsearch.vim'
-
-" typescript
-" Plug 'HerringtonDarkholme/yats.vim'
-" Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
-" For async completion
-" Plug 'Shougo/deoplete.nvim'
-
-" python
-"Plug 'psf/black'
 
 " Plug 'zxqfl/tabnine-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -69,7 +56,6 @@ Plug 'christoomey/vim-tmux-navigator'
 
 " UI
 Plug 'vim-airline/vim-airline'
-" Plug 'ryanoasis/vim-devicons'
 
 " Snippets
 Plug 'honza/vim-snippets'
@@ -96,18 +82,12 @@ if (has("termguicolors"))
 endif
 colorscheme gruvbox
 
-
-" devicons
-" let g:airline_powerline_fonts = 1
-" set encoding=UTF-8
-
 " Persistent undo
 " Don't forget mkdir folder $HOME/.config/nvim/undo
 set undofile
 set undodir=$HOME/.config/nvim/undo
 set undolevels=1000
 set undoreload=10000
-
 
 set nu
 set showcmd             " Show (partial) command in status line.
@@ -162,8 +142,6 @@ endwhile
 
 " use space instead of tabs
 set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
-" use 8 spcae width tab
-" set tabstop=8 softtabstop=0 noexpandtab shiftwidth=4
 
 autocmd Filetype scss setlocal shiftwidth=2
 
@@ -171,14 +149,6 @@ set fileformats+=dos
 
 set backupdir=$TMPDIR//
 set directory=$TMPDIR//
-
-" jsx
-let g:jsx_ext_required = 0
-
-let g:syntastic_always_populate_loc_list = 1
-
-" https://github.com/tmux/tmux/issues/543#issuecomment-248980734
-" set clipboard=unnamed
 
 " set html syntacs
 autocmd BufNewFile,BufRead *.hbs set syntax=html
