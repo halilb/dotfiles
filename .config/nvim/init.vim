@@ -18,7 +18,7 @@ Plug 'junegunn/gv.vim', { 'on': 'GV' }
 
 " Project navigation
 Plug 'mileszs/ack.vim'
-Plug 'scrooloose/nerdtree'
+Plug 'mcchrish/nnn.vim'
 
 " colors
 Plug 'morhetz/gruvbox'
