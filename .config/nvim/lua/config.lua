@@ -17,8 +17,8 @@ require'nvim-treesitter.configs'.setup {
 -- Telescope {{{
 
 api.nvim_set_keymap("n", ",", "<cmd>Telescope find_files theme=get_dropdown<CR>", { noremap = true, silent = true })
-api.nvim_set_keymap("n", "ü", "<cmd>Telescope buffers theme=get_dropdown<CR>", { noremap = true, silent = true })
-api.nvim_set_keymap("n", "ff", "<cmd>Telescope live_grep theme=get_dropdown<CR>", { noremap = true, silent = true })
+api.nvim_set_keymap("n", "ü", "<cmd>Telescope buffers theme=get_dropdown sort_lastused=true<CR>", { noremap = true, silent = true })
+--api.nvim_set_keymap("n", "<Leader>f", "<cmd>Telescope live_grep theme=get_dropdown<CR>", { noremap = true, silent = true })
 
 require('telescope').setup{
   defaults = {
