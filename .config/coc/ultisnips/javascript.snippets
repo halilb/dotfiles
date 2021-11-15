@@ -1,0 +1,84 @@
+snippet i "import module"
+import ${1} from '${2}'
+endsnippet
+
+snippet rfc "React Functional Component" b
+import React from 'react'
+
+const ${1:`!v expand('%:t:r')`} = ({ $2 }) => {
+  return (
+    <div>
+      ${3:<p>Body</p>}
+    </div>
+  )
+}
+
+export default $1
+endsnippet
+
+snippet t "jsx tag"
+<${1:div}>$0</${1/(\w+).*/$1/}>
+endsnippet
+
+snippet ti "jsx inline tag"
+<${1:div}/>
+endsnippet
+
+snippet it " it"
+it('$1', () => {
+  expect($2).$3
+})
+endsnippet
+
+snippet describe " describe"
+describe('$1', () => {
+  $2
+})
+endsnippet
+
+snippet c "console log"
+console.log({ $1 })
+endsnippet
+
+snippet co "console log"
+console.log('$1')
+endsnippet
+
+snippet tra "build translate"
+import { buildTranslate } from 'locales'
+const t = buildTranslate('$1')
+endsnippet
+
+snippet css "import styletron"
+import { useStyletron } from '@thanx/uikit/theme'
+const [css] = useStyletron()
+endsnippet
+
+snippet useS "useState Hook" b
+const [${1}, set`!p snip.rv=t[1].title()`] = useState(${3:"${4}"})
+endsnippet
+
+snippet dc "create" b
+def create
+   @$1 = `!p snip.rv = t[1].title()`.new
+end
+endsnippet
+
+# preact
+snippet pfc "Preact Functional Component" b
+import { h } from 'preact'
+
+export function ${1}() {
+  return (
+    <div>
+      ${2:Body}
+    </div>
+  )
+}
+endsnippet
+
+snippet sleep "sleep"
+function sleep(ms = ${1: 2000}) {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
+endsnippet

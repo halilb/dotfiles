@@ -1,0 +1,51 @@
+snippet rfc "React Functional Component" b
+import React from 'react'
+
+const ${1:`!v expand('%:t:r')`}: React.FC = () => {
+  return (
+    <div>
+      ${2:<p>Body</p>}
+    </div>
+  )
+}
+
+export default $1
+endsnippet
+
+snippet rfcp "React Functional Component" b
+import React from 'react'
+
+type Props = {
+  $2
+}
+
+const ${1:`!v expand('%:t:r')`}: React.FC<Props> = (props) => {
+  const { $2 } = props
+
+  return (
+    <div>
+      ${3:<p>Body</p>}
+    </div>
+  )
+}
+
+export default $1
+endsnippet
+
+snippet pfcp "React Functional Component" b
+import { h } from 'preact'
+
+type Props = {
+  $2
+}
+
+export function ${1}(props) {
+  const { $2 } = props
+
+  return (
+    <div>
+      ${3:Body}
+    </div>
+  )
+}
+endsnippet
