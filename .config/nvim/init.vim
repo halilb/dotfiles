@@ -13,7 +13,7 @@ Plug 'tpope/vim-abolish'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-Plug 'airblade/vim-gitgutter'
+"Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/gv.vim', { 'on': 'GV' }
 
 " Project navigation
@@ -33,7 +33,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
 " indentation lines
-Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua' }
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 " Linter
 Plug 'w0rp/ale'
