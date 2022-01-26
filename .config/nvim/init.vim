@@ -10,6 +10,9 @@ Plug 'tpope/vim-surround'
 " https://github.com/tpope/vim-abolish
 Plug 'tpope/vim-abolish'
 
+" Github copilot
+Plug 'github/copilot.vim'
+
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
@@ -58,6 +61,7 @@ Plug 'vim-airline/vim-airline'
 " Snippets
 Plug 'honza/vim-snippets'
 
+
 call plug#end()
 
 luafile $HOME/.config/nvim/lua/config.lua
@@ -69,6 +73,8 @@ filetype plugin on
 " minimum tab size
 set winwidth=100
 "set winheight=40
+
+"autocmd VimResized * wincmd =
 
 " Theme
 "colors torte

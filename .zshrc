@@ -27,7 +27,7 @@ export HISTFILESIZE=10000000
 
 # z for navigation
 # https://github.com/rupa/z
-. /Users/halil/dev/z.sh
+#. /Users/halil/dev/z.sh
 
 # User configuration
 #
@@ -48,7 +48,10 @@ export PATH=$PATH:~/Library/Python/2.7/bin
 export PATH=$PATH:~/dev/flutter/bin
 export PATH=$PATH:/usr/local/Cellar/mysql@5.7/5.7.27_1/bin
 
-source ~/.bin/tmuxinator.zsh
+# adding ruby paths
+export PATH=/opt/homebrew/opt/ruby/bin:/opt/homebrew/lib/ruby/gems/3.0.0/bin:$PATH
+
+#source ~/.bin/tmuxinator.zsh
 
 # source ~/Downloads/google-cloud-sdk/completion.zsh.inc
 # source ~/Downloads/google-cloud-sdk/path.zsh.inc
@@ -67,6 +70,7 @@ alias tmux="TERM=screen-256color-bce tmux"
 alias simulator='open -n /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
 alias mymeteor='~/surgery/meteor/meteor'
 alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
+alias tc='npm run tc'
 
 function mgrep { grep -rnIi "$1" . --color; }
 function mfind { find . -iname "$1" }
@@ -124,12 +128,13 @@ function fd() {
   git $@ --name-only | fzf -m --ansi --preview $preview
 }
 
-eval "$(rbenv init -)"
+#eval "$(rbenv init -)"
 
 # fnm
-eval "$(fnm env --multi)"
+eval "$(fnm env)"
 export PATH="/usr/local/bin/watchman:$PATH"
-alias config='/usr/bin/git --git-dir=/Users/halil/.cfg/ --work-tree=/Users/halil'
+#alias config='/usr/bin/git --git-dir=/Users/halil/.cfg/ --work-tree=/Users/halil'
+alias config='/usr/bin/git -C "$HOME/.cfg"'
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/halil/dev/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/halil/dev/google-cloud-sdk/path.zsh.inc'; fi
