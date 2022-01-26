@@ -1,4 +1,9 @@
 source ~/.config/nvim/vim/basics.vim
 
-luafile $HOME/.config/nvim/lua/config.lua
-lua require('plugins')
+
+lua << EOF
+require('plugins')
+require('config')
+require('lsp')
+require('format')
+EOF
